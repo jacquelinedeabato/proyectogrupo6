@@ -1,0 +1,22 @@
+<title>Document</title>
+</head>
+<body>
+    <h1>aprendemos git</h1>
+    <div>  
+        <h2>los 3 estados de git</h2>
+        <ol>
+        <li>working directory - directorio de trabajo</li>
+        <li>stage - limbo</li>
+        <li>repository - repository</li>
+         </ol>
+    </div>
+ 
+
+</body>
+</html>
+
+
+
+
+
+
