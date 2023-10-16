@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Funkoshop</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
@@ -23,7 +25,7 @@
                     <a href="" class="submenu__link">Funkos</a>
                   </li>
                   <li class="submenu__item">
-                   <a href="" class="submenu__link" >Remeras</a>
+                  <a href="" class="submenu__link" >Remeras</a>
                   </li>
                   <li class="submenu__item">
                     <a href="" class="submenu__link" >Llaveros</a>
@@ -31,13 +33,13 @@
                </ul>
         </li>
         <li class="navbar__item">
-          <a class="navbar__link" href="./pages/contact.html">CONTACTO</a>
+          <a class="navbar__link" href="./">CONTACTO</a>
         </li>
         <li class="navbar__item">
-          <a class="navbar__link" href="./pages/login.html">LOGIN</a>
+          <a class="navbar__link" href="./pages/admin/login.html">LOGIN</a>
         </li>
         <li class="navbar__item">
-          <a class="navbar__cart"  href="./pages/cart.html">
+          <a class="navbar__cart"  href="./pages/shop/carrito.html">
             <img src="./img/icons/cart-icon.svg" alt="icono de carrito">
           </a>
         </li>
@@ -98,10 +100,11 @@
                 alt="Figura coleccinable funko de patronus snape harry potter">
             </picture>
       </section>
-      <section class="slider container">
+      <section class="slider container glide">
         <h2 class="slider__title">Ultimos Lanzamientos</h2>
-            <ul class="slider__items">
-              <li class="slider__item">
+        <div class="glide__track" data-glide-el="track" >
+            <ul class="slider__items glide__slides" >
+              <li class="slider__item glide__slide">
                 <article class="card-item">
                   <a class="card-item__link" href="">
                     <picture class="card-item__cover" > <span class="card-item__tag">Nuevo</span>
@@ -117,7 +120,7 @@
                   </a>
                 </article>
               </li>
-              <li class="slider__item">
+              <li class="slider__item glide__slide">
                 <article class="card-item">
                   <a class="card-item__link" href="">
                     <picture class="card-item__cover" > <span class="card-item__tag">Nuevo</span>
@@ -133,7 +136,7 @@
                   </a>
                 </article>
               </li>
-              <li class="slider__item">
+              <li class="slider__item glide__slide">
                 <article class="card-item">
                   <a class="card-item__link" href="">
                     <picture class="card-item__cover" > <span class="card-item__tag">Nuevo</span>
@@ -150,6 +153,11 @@
                 </article>
               </li>
             </ul>
+          </div>
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="tabler:chevron-left"></iconify-icon></button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="tabler:chevron-right"></iconify-icon></button>
+          </div>
       </section>
   </main>
   <footer class="footer">
@@ -171,5 +179,22 @@
     <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+  <script> 
+    new Glide('.glide', {
+      type: 'carousel',
+      startAt: 0,
+      perView: 3,
+      gap: 30, 
+      breakpoint: {
+        991: {
+          perView: 2
+        },
+        768: {
+          perView: 1
+        }
+      }
+    }).mount()
+  </script>
 </body>
 </html>
